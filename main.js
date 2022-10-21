@@ -77,8 +77,8 @@ const insertTweetToList=(tweet,dateTime)=>{
     }
     const li = `
     <div class = "d-flex list_container">
-    <li class="list-group-item liElm">${tweet} ${dateTime} </li>
-    <a id="${tweetObj.id}" class="delete btn btn-warning" >delete</a>
+    <li class="list-group-item liElm">${tweet} <strong class="dateandTime">${dateTime}</strong> </li>
+    <a id="${tweetObj.id}" class="delete btn" >delete</a>
     </div>`
      tweetObj.name = li
      //console.log(tweetObj)
@@ -88,10 +88,10 @@ const insertTweetToList=(tweet,dateTime)=>{
         return tweets
     }
     else if(tweetLengthVal===0){
-        showMsg("Plase write something to tweet","text-danger")
+        showMsg("Please write something to tweet","text-warning")
     }
     else{
-       showMsg("you can't write more than 250 characters","text-danger")
+       showMsg("you can't write more than 250 characters","text-warning")
         return
     } 
    
@@ -130,21 +130,23 @@ document.addEventListener("DOMContentLoaded",()=>{
     //delete an item from storage and uit
    if (tweets.length>0) {
     ulElm.addEventListener("click",(e)=>{
-    const listId = Number(e.target.id)
-    console.log(e.target.parentElement)
-    console.log(listId)
-    const restVal = tweets.filter(tweet=>{
-        
-       return (tweet.id!==listId)
-     })
-     localStorage.removeItem("tweetsList")
-     setTimeout(() => {
-        document.location.reload()
-    }, 2000);
-     localStorage.setItem("tweetsList",JSON.stringify(restVal))
-     
-      e.target.parentElement.remove()
-        showMsg("Tweet delete successfully","text-danger")
+        if (e.target.classList.contains("delete")) {
+            const listId = Number(e.target.id)
+            //console.log(e.target.parentElement)
+            //console.log(listId)
+            const restVal = tweets.filter(tweet=>{
+                
+               return (tweet.id!==listId)
+             })
+             localStorage.removeItem("tweetsList")
+             setTimeout(() => {
+                document.location.reload()
+            }, 2000);
+             localStorage.setItem("tweetsList",JSON.stringify(restVal))
+             
+              e.target.parentElement.remove()
+                showMsg("Tweet delete successfully","text-danger")   
+        }
     })
    }
 

@@ -5,22 +5,38 @@
     width: 100%;
     height: 100%;
     font-family: 'Roboto Slab', serif;
+    background-image: url("./Untitled-2.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom bottom;
 }
 .content {
     margin:auto;
     height: 600px;
     width: 900px;
     position:fixed;
-    top:50%;
+    top:10%;
     bottom:0;
     left:0;
     right:0;
 }
+.inner_cont{
+  /* align-items: center; */
+  justify-content: center
+}
+h1{
+  font-size: 50px;
+  color: #007CFF;
+  font-weight: 800;
+  margin-bottom: 30px;
+  text-align: center;
+}
 .liElm{
-  font-size: 10px;
+  font-size: 15px;
 }
 .d-flex.list_container{
   margin-bottom: 10px;
+  justify-content:space-between;
 }
 .delete{
 width: 100px;
@@ -29,6 +45,65 @@ height: 30px;
 button.btn.btn-outline-success.submit_buttton {
   height: 38px;
   border-radius: 0;
-  background: #00318B;
+  background: #007CFF;
   color: #fff;
+}
+i.fa.fa-trash {
+  color: #007CFF;
+  font-size: 1rem;
+  margin-left: 10px;
+  cursor: pointer;
+
+}
+.list-group-item{
+  border: none!important;
+  border: 0!important;
+}
+i.list-group-item.liElm {
+  border: 0!important;
+  font-size: 1.2rem;
+}
+.d-flex.list_container {
+  margin-bottom: 10px;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: rgb(50 50 93 / 25%) 0px 6px 12px -2px, rgb(0 0 0 / 30%) 0px 3px 7px -3px;
+  border-radius: 3px;
+}
+.form-control:focus {
+  border-color: inherit;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.btn:focus {
+  border-color: inherit!important;
+  -webkit-box-shadow: none!important;
+  box-shadow: none!important;
+}
+.form-control{
+  border: .2px solid #007CFF;
+  border-radius:0!important;
+  border-radius: 0!important;
+}
+.up_div{
+justify-content: space-around;
+}
+.delete {
+  background-color: #007CFF;
+  color: #fff;
+  font-size: 10px;
+  width: 51px;
+  height: 29px;
+  text-align: center;
+}
+.delete:hover {
+  background-color: #007CFF;
+  color: #fff;
+  font-size: 10px;
+  width: 51px;
+  height: 29px;
+  text-align: center;
+}
+.dateandTime{
+  font-weight: 200;
 }
