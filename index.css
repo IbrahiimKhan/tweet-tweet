@@ -26,3 +26,9 @@
 width: 100px;
 height: 30px;
 }
+button.btn.btn-outline-success.submit_buttton {
+  height: 38px;
+  border-radius: 0;
+  background: #00318B;
+  color: #fff;
+}
